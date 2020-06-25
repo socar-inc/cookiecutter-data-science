@@ -1,0 +1,25 @@
+local: &local
+  project: socar-data
+  jwt: service_account_key.json
+  dataset: temp_kyle
+  suffix: local
+  save_folder: .
+  official_alert: https://hooks.slack.com/services/~~~ # Local용 슬랙 Hook Key(Staging과 중복해도 무방)
+
+
+staging:
+  project: socar-data
+  jwt: service_account_key.json
+  dataset: socar_data_ml_staging
+  suffix: staging
+  save_folder: /home/airflow/gcs/data/~ # 주로 Airflow Folder 구조
+  official_alert: https://hooks.slack.com/services/~~~ # Staging용 슬랙 Hook Key
+
+
+production:
+  project: socar-data
+  jwt: service_account_key.json
+  dataset: socar_data_ml_prod
+  suffix: prod
+  save_folder: /home/airflow/gcs/data/~~ #  주로 Airflow Folder 구조
+  official_alert: https://hooks.slack.com/services/~~~ # Production용 슬랙 Hook Key
